@@ -181,6 +181,8 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    validates_cpf_cnpj (0.2.0)
+      activemodel (>= 3.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     websocket-driver (0.7.6)
@@ -205,6 +207,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   tzinfo-data
+  validates_cpf_cnpj (~> 0.2.0)
 
 RUBY VERSION
    ruby 3.2.1p31

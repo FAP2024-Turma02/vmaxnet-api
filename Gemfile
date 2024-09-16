@@ -48,3 +48,5 @@ end
 
 gem 'dotenv-rails'
 gem "devise", "~> 4.9"
+
+gem "validates_cpf_cnpj", "~> 0.2.0"
