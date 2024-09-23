@@ -11,5 +11,11 @@ class CreateServices < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    execute <<-SQL
+      ALTER TABLE services
+      ADD CONSTRAINT check_positive_fees
+      CHECK (monthly_fee >= 0 AND adhesion_fee >= 0 AND termination_fee >= 0);
+    SQL
   end
 end
