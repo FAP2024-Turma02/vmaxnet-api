@@ -50,3 +50,5 @@ gem 'dotenv-rails'
 gem "devise", "~> 4.9"
 
 gem "validates_cpf_cnpj", "~> 0.2.0"
+
+gem "devise_token_auth", "~> 1.2"
