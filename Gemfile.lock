@@ -84,6 +84,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (1.2.3)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.2)
     dotenv (3.1.2)
     dotenv-rails (3.1.2)
       dotenv (= 3.1.2)
@@ -198,6 +202,7 @@ DEPENDENCIES
   bootsnap
   debug
   devise (~> 4.9)
+  devise_token_auth (~> 1.2)
   dotenv-rails
   mutex_m
   pg (~> 1.1)

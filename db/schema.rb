@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_16_184248) do
+
+ActiveRecord::Schema[7.0].define(version: 2024_09_23_195434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "corporate_clients", force: :cascade do |t|
     t.string "company_name", null: false
@@ -25,7 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_16_184248) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "produtos", force: :cascade do |t|
+
+  create_table "contract", force: :cascade do |t|
     t.integer "contract_number", null: false
     t.string "store_correspondent", null: false
     t.string "cardholder", null: false
@@ -47,6 +56,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_16_184248) do
     t.date "end_date"
     t.string "billing_address", null: false
     t.string "installation_address", null: false
+
+  create_table "enderecos", force: :cascade do |t|
+    t.integer "tipo"
+    t.string "logradouro"
+    t.string "referencia"
+    t.string "cep"
+    t.string "cidade"
+    t.string "bairro"
+    t.string "numero"
+    t.string "complemento"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,8 +82,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_16_184248) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.text "tokens"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
 end
