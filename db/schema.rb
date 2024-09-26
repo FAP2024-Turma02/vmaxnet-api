@@ -33,6 +33,30 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_195434) do
     t.datetime "updated_at", null: false
   end
 
+
+  create_table "contract", force: :cascade do |t|
+    t.integer "contract_number", null: false
+    t.string "store_correspondent", null: false
+    t.string "cardholder", null: false
+    t.boolean "loyalty", default: false
+    t.string "equipment", null: false
+    t.string "installation_type", null: false
+    t.integer "installation_installments", null: false
+    t.string "installation_payment_method", null: false
+    t.boolean "exempt", default: false
+    t.string "billing_type", null: false
+    t.date "due_date", null: false
+    t.string "who_referred"
+    t.text "financial_comments"
+    t.text "technical_comments"
+    t.decimal "adhesion_total", precision: 10, scale: 2, null: false
+    t.decimal "rescission_total", precision: 10, scale: 2, null: false
+    t.decimal "monthly_total", precision: 10, scale: 2, null: false
+    t.date "start_date", null: false
+    t.date "end_date"
+    t.string "billing_address", null: false
+    t.string "installation_address", null: false
+
   create_table "enderecos", force: :cascade do |t|
     t.integer "tipo"
     t.string "logradouro"
@@ -46,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_195434) do
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "users", force: :cascade do |t|
