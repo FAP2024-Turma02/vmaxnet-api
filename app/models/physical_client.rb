@@ -1,4 +1,7 @@
 class PhysicalClient < ApplicationRecord
+    
+    has_many :enderecos, dependent :destroy
+    
     validates :name, length: { minimum: 8 }, presence: true
     validates :nickname, presence: false
     validates :cpf, lentgh { is: 11 }, uniqueness: true, presence: true
