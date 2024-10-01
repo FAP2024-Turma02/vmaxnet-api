@@ -5,6 +5,7 @@ ruby "3.2.1"
 gem 'base64'
 gem 'bigdecimal'
 gem 'mutex_m'
+gem 'omniauth'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8", ">= 7.0.8.1"
