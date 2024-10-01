@@ -1,5 +1,8 @@
 class Endereco < ApplicationRecord
 
+    belongs_to :physical_client
+    belongs_to :corporate_client
+    
     validates :tipo, presence: true
     validates :logradouro, uniqueness: true, length: { maximum: 100 },presence: true
     validates :referencia, length: { maximum: 40 } ,presence: false
