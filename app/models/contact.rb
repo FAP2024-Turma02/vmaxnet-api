@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+  belongs_to :contactable, polymorphic: true
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, allow_blank: true
   validates :phone, format: { with: /\A\d{8,9}\z/ }, allow_blank: true
