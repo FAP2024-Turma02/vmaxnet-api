@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_10_01_034712) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,8 +32,36 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_01_034712) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "enderecos", force: :cascade do |t|
+    t.integer "tipo"
+    t.string "logradouro"
+    t.string "referencia"
+    t.string "cep"
+    t.string "cidade"
+    t.string "bairro"
+    t.string "numero"
+    t.string "complemento"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "physical_client_id", null: false
+    t.bigint "corporate_client_id", null: false
+    t.index ["corporate_client_id"], name: "index_enderecos_on_corporate_client_id"
+    t.index ["physical_client_id"], name: "index_enderecos_on_physical_client_id"
+  end
 
-  create_table "contract", force: :cascade do |t|
+  create_table "physical_clients", force: :cascade do |t|
+    t.string "name"
+    t.string "nickname"
+    t.string "cpf"
+    t.string "rg"
+    t.date "date_of_birth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "produtos", force: :cascade do |t|
     t.integer "contract_number", null: false
     t.string "store_correspondent", null: false
     t.string "cardholder", null: false
@@ -56,38 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_01_034712) do
     t.date "end_date"
     t.string "billing_address", null: false
     t.string "installation_address", null: false
-
-  create_table "enderecos", force: :cascade do |t|
-    t.integer "tipo"
-    t.string "logradouro"
-    t.string "referencia"
-    t.string "cep"
-    t.string "cidade"
-    t.string "bairro"
-    t.string "numero"
-    t.string "complemento"
-    t.float "latitude"
-    t.float "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-<<<<<<< HEAD
-    t.bigint "physical_client_id", null: false
-    t.bigint "corporate_client_id", null: false
-    t.index ["corporate_client_id"], name: "index_enderecos_on_corporate_client_id"
-    t.index ["physical_client_id"], name: "index_enderecos_on_physical_client_id"
-  end
-
-  create_table "physical_clients", force: :cascade do |t|
-    t.string "name"
-    t.string "nickname"
-    t.string "cpf"
-    t.string "rg"
-    t.date "date_of_birth"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-=======
-
->>>>>>> 25fe9f91c6e22992ac17d59fe8c64da2617cc0b5
   end
 
   create_table "users", force: :cascade do |t|
