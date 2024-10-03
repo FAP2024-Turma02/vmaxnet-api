@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  resources :physical_clients, only: [:index, :show]
+  resources :corporate_clients, only: [:index, :show]
+  resources :enderecos, only: [:index, :show]
+  
+  # mount_devise_token_auth_for 'User', at: 'auth'
 end

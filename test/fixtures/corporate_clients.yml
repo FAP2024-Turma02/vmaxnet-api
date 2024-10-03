@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_name: MyString
+  trade_name: MyString
+  tax_id: MyString
+  state_registration: MyString
+  foundation_date: 2024-09-16
+  has_partnership: false
+
+two:
+  company_name: MyString
+  trade_name: MyString
+  tax_id: MyString
+  state_registration: MyString
+  foundation_date: 2024-09-16
+  has_partnership: false
