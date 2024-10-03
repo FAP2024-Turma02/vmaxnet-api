@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_03_130111) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "produtos", force: :cascade do |t|
+  create_table "contract", force: :cascade do |t|
     t.integer "contract_number", null: false
     t.string "store_correspondent", null: false
     t.string "cardholder", null: false
