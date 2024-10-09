@@ -1,0 +1,2 @@
+class CorporateClient < Client
+end

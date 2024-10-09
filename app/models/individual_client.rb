@@ -1,0 +1,2 @@
+class IndividualClient < Client
+end
