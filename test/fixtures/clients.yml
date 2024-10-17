@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  first_name: MyString
+  how_find_us: MyString
+  nickname: MyString
+  cpf: MyString
+  rg: MyString
+  birth_date: 2024-10-17
+  legal_name: MyString
+  trade_name: MyString
+  cnpj: MyString
+  ie: MyString
+  foundation_date: 2024-10-17
+  has_partnership: false
+
+two:
+  type: 
+  first_name: MyString
+  how_find_us: MyString
+  nickname: MyString
+  cpf: MyString
+  rg: MyString
+  birth_date: 2024-10-17
+  legal_name: MyString
+  trade_name: MyString
+  cnpj: MyString
+  ie: MyString
+  foundation_date: 2024-10-17
+  has_partnership: false
