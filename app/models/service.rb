@@ -8,4 +8,3 @@ class Service < ApplicationRecord
     validates :description, presence: true
     validates :available_on, presence: true
   end
-  
